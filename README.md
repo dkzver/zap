@@ -1,11 +1,30 @@
-<div align="center">
+# АвтоРазборка 3D — Симулятор Погрузчика
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+Полностью статическая 3D low-poly игра на **Three.js + React + Vite** (без серверной части и внешних ассетов).
 
-  <h1>Built with AI Studio</h2>
+## Локальный запуск и сборка статики
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+```bash
+npm install
+npm run dev      # режим разработки
+npm run build    # сборка статических файлов в папку dist/
+```
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+После `npm run build` в папке `dist/` формируется полностью автономный статический сайт с относительными путями (`base: './'`), готовый к публикации на GitHub Pages, Netlify, Vercel или любом статическом хостинге.
 
-</div>
+## Публикация на GitHub Pages
+
+1. Создайте новый пустой репозиторий на GitHub (например, `avtorazborka-3d`).
+2. Инициализируйте git и отправьте проект в ветку `main`:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit: 3D low-poly forklift game"
+git branch -M main
+git remote add origin https://github.com/<ваш-логин>/<имя-репозитория>.git
+git push -u origin main
+```
+
+3. В настройках репозитория откройте **Settings → Pages → Build and deployment → Source** и выберите **GitHub Actions**.
+4. Готовый workflow `.github/workflows/deploy.yml` автоматически соберёт `dist/` и опубликует игру по адресу `https://<ваш-логин>.github.io/<имя-репозитория>/`.
